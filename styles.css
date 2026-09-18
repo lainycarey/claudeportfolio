@@ -3,17 +3,28 @@
    ============================================ */
 
 :root {
-  --color-bg: #faf7f2;
-  --color-bg-alt: #f2ece1;
+  /* Jewel-tone palette (deep purple, berry, teal, chartreuse — pink used sparingly) */
+  --color-bg: #faf8f5;
+  --color-bg-alt: #f1ecf2;
   --color-surface: #ffffff;
-  --color-ink: #1c1b19;
-  --color-ink-soft: #4a4642;
-  --color-ink-faint: #837c73;
-  --color-accent: #b5622f;
-  --color-accent-soft: #e8c9ad;
-  --color-accent-deep: #7a3f1c;
-  --color-line: rgba(28, 27, 25, 0.1);
-  --color-line-strong: rgba(28, 27, 25, 0.18);
+  --color-ink: #221527;
+  --color-ink-soft: #5a4d61;
+  --color-ink-faint: #93899b;
+
+  --color-accent: #5c2172;
+  --color-accent-soft: #e9daf0;
+  --color-accent-deep: #d9a3ef;
+
+  --color-teal: #146b68;
+  --color-teal-soft: #d2ebe8;
+  --color-berry: #9c2960;
+  --color-berry-soft: #f4d9e5;
+  --color-yellow: #b8ad2a;
+  --color-yellow-soft: #f2efc9;
+  --color-pink: #d6169a;
+
+  --color-line: rgba(34, 21, 39, 0.1);
+  --color-line-strong: rgba(34, 21, 39, 0.18);
 
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -27,32 +38,52 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --color-bg: #17140f;
-    --color-bg-alt: #1f1a13;
-    --color-surface: #221d16;
-    --color-ink: #f4efe6;
-    --color-ink-soft: #cfc6b8;
-    --color-ink-faint: #948a7b;
-    --color-accent: #e08a4e;
-    --color-accent-soft: #4a2e1a;
-    --color-accent-deep: #f0a870;
-    --color-line: rgba(244, 239, 230, 0.12);
-    --color-line-strong: rgba(244, 239, 230, 0.2);
+    --color-bg: #16101a;
+    --color-bg-alt: #1e1522;
+    --color-surface: #241a29;
+    --color-ink: #f3ecf5;
+    --color-ink-soft: #cabcd1;
+    --color-ink-faint: #948a9c;
+
+    --color-accent: #c584e3;
+    --color-accent-soft: #3c2547;
+    --color-accent-deep: #4a1660;
+
+    --color-teal: #52c4bd;
+    --color-teal-soft: #17302f;
+    --color-berry: #e278a4;
+    --color-berry-soft: #3b1c29;
+    --color-yellow: #ddd15e;
+    --color-yellow-soft: #383414;
+    --color-pink: #ef6ac2;
+
+    --color-line: rgba(243, 236, 245, 0.12);
+    --color-line-strong: rgba(243, 236, 245, 0.2);
   }
 }
 
 :root[data-theme="dark"] {
-  --color-bg: #17140f;
-  --color-bg-alt: #1f1a13;
-  --color-surface: #221d16;
-  --color-ink: #f4efe6;
-  --color-ink-soft: #cfc6b8;
-  --color-ink-faint: #948a7b;
-  --color-accent: #e08a4e;
-  --color-accent-soft: #4a2e1a;
-  --color-accent-deep: #f0a870;
-  --color-line: rgba(244, 239, 230, 0.12);
-  --color-line-strong: rgba(244, 239, 230, 0.2);
+  --color-bg: #16101a;
+  --color-bg-alt: #1e1522;
+  --color-surface: #241a29;
+  --color-ink: #f3ecf5;
+  --color-ink-soft: #cabcd1;
+  --color-ink-faint: #948a9c;
+
+  --color-accent: #c584e3;
+  --color-accent-soft: #3c2547;
+  --color-accent-deep: #4a1660;
+
+  --color-teal: #52c4bd;
+  --color-teal-soft: #17302f;
+  --color-berry: #e278a4;
+  --color-berry-soft: #3b1c29;
+  --color-yellow: #ddd15e;
+  --color-yellow-soft: #383414;
+  --color-pink: #ef6ac2;
+
+  --color-line: rgba(243, 236, 245, 0.12);
+  --color-line-strong: rgba(243, 236, 245, 0.2);
 }
 
 * { box-sizing: border-box; }
@@ -321,6 +352,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-accent);
   margin-bottom: 6px;
 }
+.stat:nth-child(2) .stat-num { color: var(--color-teal); }
+.stat:nth-child(3) .stat-num { color: var(--color-berry); }
+.stat:nth-child(4) .stat-num { color: var(--color-yellow); }
 .stat-label {
   font-size: 0.82rem;
   color: var(--color-ink-faint);
@@ -367,6 +401,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-accent);
   margin-bottom: 10px;
 }
+.highlight-card:nth-child(2) .highlight-num { color: var(--color-teal); }
+.highlight-card:nth-child(3) .highlight-num { color: var(--color-pink); }
+.highlight-card:nth-child(4) .highlight-num { color: var(--color-yellow); }
 .highlight-card p {
   margin: 0;
   color: var(--color-ink-soft);
@@ -440,6 +477,8 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-accent);
   margin-bottom: 10px;
 }
+.event-card:nth-child(2) .event-tag { color: var(--color-teal); }
+.event-card:nth-child(3) .event-tag { color: var(--color-berry); }
 .event-body h3 {
   font-size: 1.3rem;
   margin-bottom: 20px;
@@ -474,8 +513,10 @@ a { color: inherit; text-decoration: none; }
   padding: 6px 12px;
   border-radius: 20px;
   background: var(--color-accent-soft);
-  color: var(--color-accent-deep);
+  color: var(--color-accent);
 }
+.event-card:nth-child(2) .event-stats span { background: var(--color-teal-soft); color: var(--color-teal); }
+.event-card:nth-child(3) .event-stats span { background: var(--color-berry-soft); color: var(--color-berry); }
 
 /* ---------- Testimonials ---------- */
 .testimonials { padding: 100px 0; }
@@ -573,6 +614,9 @@ a { color: inherit; text-decoration: none; }
   background: var(--color-bg);
   border: 2px solid var(--color-accent);
 }
+.timeline-item:nth-child(4n+2) .timeline-marker { border-color: var(--color-teal); }
+.timeline-item:nth-child(4n+3) .timeline-marker { border-color: var(--color-berry); }
+.timeline-item:nth-child(4n+4) .timeline-marker { border-color: var(--color-yellow); }
 
 .timeline-head {
   display: flex;
@@ -592,6 +636,9 @@ a { color: inherit; text-decoration: none; }
   white-space: nowrap;
   font-weight: 500;
 }
+.timeline-item:nth-child(4n+2) .timeline-org { color: var(--color-teal); }
+.timeline-item:nth-child(4n+3) .timeline-org { color: var(--color-berry); }
+.timeline-item:nth-child(4n+4) .timeline-org { color: var(--color-yellow); }
 .timeline-org {
   font-size: 0.95rem;
   font-weight: 600;
