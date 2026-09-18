@@ -374,6 +374,175 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.5;
 }
 
+/* ---------- Featured Events ---------- */
+.featured-events { padding: 100px 0; background: var(--color-bg-alt); }
+.featured-events h2 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  max-width: 780px;
+  margin-bottom: 16px;
+}
+.section-lede {
+  color: var(--color-ink-faint);
+  font-size: 1rem;
+  margin: 0 0 48px;
+}
+.section-lede em { color: var(--color-accent); font-style: normal; font-weight: 500; }
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.event-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent-soft);
+}
+
+.event-image {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed var(--color-line-strong);
+  border-width: 0 0 1px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-ink) 4%, transparent),
+    color-mix(in srgb, var(--color-ink) 4%, transparent) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+.event-image span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink-faint);
+  letter-spacing: 0.02em;
+}
+
+.event-body { padding: 28px 26px 30px; }
+
+.event-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+.event-body h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.event-breakdown { margin: 0 0 22px; }
+.event-breakdown div { margin-bottom: 14px; }
+.event-breakdown div:last-child { margin-bottom: 0; }
+.event-breakdown dt {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  margin-bottom: 4px;
+}
+.event-breakdown dd {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.event-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.event-stats span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-deep);
+}
+
+/* ---------- Testimonials ---------- */
+.testimonials { padding: 100px 0; }
+.testimonials h2 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  max-width: 780px;
+  margin-bottom: 16px;
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.testimonial-card {
+  margin: 0;
+  padding: 28px;
+  border: 1px dashed var(--color-line-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.testimonial-card:hover {
+  border-color: var(--color-accent-soft);
+  transform: translateY(-3px);
+}
+.testimonial-card p {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+  margin: 0 0 26px;
+}
+.testimonial-card footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  border: 1px dashed var(--color-line-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink-faint);
+  flex-shrink: 0;
+}
+.testimonial-card cite {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+}
+.testimonial-role {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-ink-faint);
+}
+
 /* ---------- Experience / Timeline ---------- */
 .experience { padding: 110px 0; }
 .experience h2 {
@@ -589,18 +758,20 @@ a.contact-link:hover {
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .highlight-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-links { grid-template-columns: repeat(2, 1fr); }
+  .event-grid, .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px) {
   .site-nav { display: none; }
   .nav-toggle { display: flex; }
   .hero { padding: 64px 20px 48px; }
-  .about, .experience, .competencies, .education { padding: 64px 0; }
+  .about, .experience, .competencies, .education, .featured-events, .testimonials { padding: 64px 0; }
   .contact { padding: 80px 0 64px; }
   .competency-grid { grid-template-columns: 1fr; }
   .timeline { padding-left: 24px; }
   .timeline-marker { left: -29.5px; }
   .education-card { flex-direction: column; align-items: flex-start; }
+  .event-grid, .testimonial-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
