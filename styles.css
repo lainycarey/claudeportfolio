@@ -755,6 +755,11 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-ink-faint);
   font-size: 0.9rem;
 }
+.speaking-body p.speaking-panelists {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-style: italic;
+}
 
 /* ---------- Education ---------- */
 .education { padding: 100px 0; }
