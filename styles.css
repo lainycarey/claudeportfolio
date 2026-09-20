@@ -869,13 +869,13 @@ a { color: inherit; text-decoration: none; }
 }
 .contact-inner { text-align: center; }
 .contact-headshot {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 24px;
-  border-radius: var(--radius-md);
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 20px;
+  border-radius: 8px;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--color-bg) 18%, transparent);
-  box-shadow: 0 12px 24px -14px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 16px -10px rgba(0, 0, 0, 0.5);
 }
 .contact-headshot img {
   width: 100%;
@@ -963,7 +963,7 @@ a.contact-link:hover {
   .site-nav { display: none; }
   .nav-toggle { display: flex; }
   .hero { padding: 64px 20px 48px; }
-  .contact-headshot { width: 80px; height: 80px; }
+  .contact-headshot { width: 40px; height: 40px; }
   .about, .experience, .competencies, .education, .featured-events, .testimonials, .speaking { padding: 64px 0; }
   .contact { padding: 80px 0 64px; }
   .competency-grid { grid-template-columns: 1fr; }
