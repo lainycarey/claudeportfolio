@@ -446,11 +446,14 @@ a { color: inherit; text-decoration: none; }
 
 .event-image {
   aspect-ratio: 16 / 10;
-  border: 1px dashed var(--color-line-strong);
-  border-width: 0 0 1px 0;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.event-image:has(span) {
+  border: 1px dashed var(--color-line-strong);
+  border-width: 0 0 1px 0;
   background: repeating-linear-gradient(
     135deg,
     color-mix(in srgb, var(--color-ink) 4%, transparent),
@@ -458,6 +461,12 @@ a { color: inherit; text-decoration: none; }
     transparent 10px,
     transparent 20px
   );
+}
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .event-image span {
   font-size: 0.82rem;
