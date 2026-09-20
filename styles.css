@@ -331,6 +331,11 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-accent);
   transform: translateY(-2px);
 }
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
 
 .hero-meta {
   display: flex;
